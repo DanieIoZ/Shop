@@ -1,0 +1,416 @@
+body{
+	background-color: #131415;
+}
+button,
+button:active,
+button:focus {
+	outline: none;
+}
+
+.Account-Panel {
+	height: 50vw;
+}
+
+.Main {
+	background-color: #393939;
+	
+}
+
+.Account-Image{
+	height: 10vw;
+	background-image: url(../img/8n3gxrQQPO0.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.Money{
+	background-color: #029145;
+	height: 4vw;
+}
+
+.Search-Panel{
+	background-color: #F91956;
+	height: 4vw;
+}
+.item{
+	width: 100%;
+	height: 60vw;
+	background-color: #171717;
+
+}
+
+.Upper-Box{
+	height: 50%;
+	width: 100%;
+}
+.Down-Box{
+	width: 100%;
+	height: 50%;
+}
+
+.Dots-Box{
+  margin-top: -32px;
+  width: 30%;
+  height: 32px;
+  z-index: 5;
+  top:50%;
+  left:35%;
+  right:35%;
+}
+
+.Dots-Container{
+	height: 16px;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.Account-Panel{
+		display: none;
+	}
+	.item{
+		height: 80vw;
+	}
+	.Info-Block .Title{
+		font-size: 2.75vw;
+	}
+
+	.Button-Box button p{
+		font-size: 1.75vw;
+		transition: 0.25s;
+	}
+
+	.Info-Block .Text p{
+		font-size: 1.75vw;
+	}
+
+	.Button-Box button:hover{
+		transition: 0.25s;
+		height: 70%;
+		width: 55%;
+	}
+
+	.Button-Box button:hover p{
+		font-size: 1.9vw;
+		transition: 0.25s;
+	}
+
+	.Block-2{
+		height: 80vw !important;
+	}
+}
+
+img{
+	width: 100%;
+	height: 100%;
+}
+.absolute {
+	position: absolute;
+
+}
+.relative{
+	position: relative;
+}
+.owl-item .item .Down-Box .Gif-Box{
+	width: 100%;
+	height: 100%;
+}
+
+.Info-Block{
+	width: 30%;
+	height: 100%;
+	top: 0%;
+	left: 70%;
+	background-color: rgba(0, 0, 0, 0.76);
+
+}
+
+.Info-Block .Content{
+	height: 100%;
+	width: 100%;
+}
+.Title{
+	height: 15%;
+	font-size: 2.5vw;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(212, 232, 255, 1) 20%, rgba(115, 179, 255, 1) 80%, rgba(0, 117, 255, 0) 100%);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	color: white;
+}
+.Info-Block .Text{
+	height: 70%;
+}
+.Button-Box{
+	height: 15%;
+}
+.Title p {
+	border-bottom: 2px solid white;
+	text-transform: uppercase;
+}
+
+.Button-Box button{
+	
+	background: #00A3FF;
+	border-radius: 2px;
+	border: 0px;
+	height: 65%;
+	width: 50%;
+	color: white;
+	font-size: 1.25vw;
+
+	transition: 0.25s;
+}
+
+.Button-Box button:hover{
+	transition: 0.25s;
+	height: 70%;
+	width: 55%;
+	font-size: 1.35vw;
+}
+
+.Text p {
+	align-items: center;
+	text-align: center;
+	color: rgba(255,255,255,0.85);
+	font-size: 1.25vw;
+
+}
+.Block-2{
+	height: 45vw;
+}
+
+.Block-2 .Content{
+	height: 100%;
+
+}
+
+.Block-2 .Content .Left-Block{
+	background-color: #121212;
+	height: 100%;
+	max-width: 25%;
+}
+.Block-2 .Content .Right-Block{
+	background-color: #121212;
+	height: 100%;
+}
+
+.Block-2 .Content .Left-Block .Categories{
+	height: 92%;
+	
+}
+
+.Block-2 .Content .Left-Block .Categories .Category-Item{
+	max-width: 50%;
+}
+.Left-Block .Categories .Category-Item .Category-Content{
+	height: 100%;
+	width: 100%;
+	padding: 0.5vw;
+	position: relative;
+}
+.Left-Block .Categories .Category-Item .Category-Content .Icon-Box{	
+	bottom: 50%;
+	top: 50%;
+	left: 50%;
+	right: 50%;
+	position: absolute;
+	border-radius: 50%;
+	/*border: 1px solid white;*/
+	background-color: #191919;
+	transition: 0.25s;
+}
+
+.Category-Item{
+	height: 20%;
+	border: 1px solid #131415;
+	background: #1E1E1E;
+	transition: 0.25s;
+}
+.Category-Item:hover{
+	border: 4px solid #00A2FE;
+}
+.Left-Block .Categories .Category-Item .Category-Content .Icon-Box [class*=Icon-Image]{	
+	height: 5vw;
+	width: 5vw;
+	margin: 0.5vw;
+	transition: 0.5s;
+}
+.Category-Item .Category-Content .Icon-Box .Icon-Image-Gray{	
+	opacity: 1;
+	z-index: 2;
+}
+.Category-Item:hover .Category-Content .Icon-Box .Icon-Image-Gray{	
+	opacity: 0;
+}
+.Category-Item .Category-Content .Icon-Box .Icon-Image-White{	
+	opacity: 1;
+	z-index: 1;
+}
+.Category-Item:hover .Category-Content .Icon-Box .Icon-Image-White{	
+	opacity: 1;
+}
+.Category-Item .Category-Content .Icon-Box .Icon-Image-Blue{	
+	opacity: 0;
+}
+
+.Filling{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background-color: rgba(0,0,0,0);
+	border-radius: 100px;
+	transition: 0.5s;
+}
+.Category-Item:hover .Filling{
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	background-color: #494949;
+}
+
+
+.Left-Block .Categories .Category-Item .Category-Content .Icon-Title{	
+	
+	position: absolute;
+	text-align: center;
+	vertical-align: center;
+	background: linear-gradient(0deg ,rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 10%,rgba(0,0,0,0.35) 90%,rgba(0,0,0,0) 100%);
+	width: 100%;
+	bottom: -40%;
+	margin: 0;
+	padding: 0;
+	font-size: 1.15vw;
+	color: white;
+	transition: .5s;
+	text-transform: uppercase;
+}
+.Left-Block .Categories .Category-Item:hover .Category-Content .Icon-Title{
+	bottom: 0;
+}
+
+.Block-2 .Content .Left-Block .GoToList{
+	height: 8%;
+	background: #00A2FE;
+
+}
+
+.Block-2 .Content .Left-Block .Link-Box .GoToList{
+	color: white;
+	font-size: 1.5vw;
+	margin: 0;
+	transition: 0.25s;
+}
+
+.Block-2 .Content .Left-Block .Link-Box:hover .GoToList, .Block-2 .Content .Left-Block .Link-Box:hover{
+	font-size: 1.75vw;
+	color: white;
+	text-decoration: none;
+}
+
+
+.owl-dots{
+	position: absolute;
+	top: 50%;
+	margin-top: -32px;
+	width: 30%;
+	left: 35%;
+ 	right: 35%;
+}
+
+@media (max-width: 768px) {
+	.Block-2{
+		height: 65vw !important;
+	}
+}
+
+.Game-Box {
+  position: relative;
+  width: 25%;
+  height: 50%;
+}
+
+.Game-Box .More-Info {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 5;
+  transition: 0.5s ease;
+}
+
+.Game-Box:hover .overlay {
+  z-index: -5;
+  opacity: 0;
+}
+.pic {
+	height: 100%;
+	width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0%;
+  left: 0%;
+ 
+}
+
+.Gif-Box{
+	width: auto;
+	height: 100%;
+
+}
+.Gif-Box img{
+	width: 100%;
+	height: 100%;
+	
+}
+.Buttons-Box{
+	position: absolute;
+	top: 75%;
+	width: 100%;
+	height: 25%;
+	background-color: rgba(0,0,0,0.75);
+}
+
+.Block-3 .Content{
+	height: 50vw;
+	background-color: #313131;
+}
+
+.To-Kits-Button{
+	height: 10%;
+	width: 100%;
+}
+
+.To-Kits-Button button{
+	
+	background: #00A3FF;
+	border-radius: 2px;
+	border: 0px;
+	height: 80%;
+	width: 30%;
+	color: white;
+	font-size: 1.35vw;
+
+	transition: 0.5s ease;
+}
+
+.To-Kits-Button button:hover{
+	background: rgba(0,0,0,0);
+	border-radius: 0px;
+	border-bottom: 2px solid #00A3FF;
+	border-top: 2px solid #00A3FF;
+	width: 110%;
+	font-size: 1.5vw;
+}
+
