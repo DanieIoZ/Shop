@@ -74,7 +74,7 @@ button:focus {
 		font-size: 2.75vw;
 	}
 
-	.Button-Box button p{
+	.Button-Box p{
 		font-size: 1.75vw;
 		transition: 0.25s;
 	}
@@ -83,13 +83,13 @@ button:focus {
 		font-size: 1.75vw;
 	}
 
-	.Button-Box button:hover{
+	.Button-Box:hover{
 		transition: 0.25s;
 		height: 70%;
 		width: 55%;
 	}
 
-	.Button-Box button:hover p{
+	.Button-Box:hover p{
 		font-size: 1.9vw;
 		transition: 0.25s;
 	}
