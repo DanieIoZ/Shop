@@ -1,9 +1,9 @@
 body{
 	background-color: #131415;
+
 }
-button,
-button:active,
-button:focus {
+
+button, button:focus{
 	outline: none;
 }
 
@@ -83,17 +83,6 @@ button:focus {
 		font-size: 1.75vw;
 	}
 
-	.Button-Box:hover{
-		transition: 0.25s;
-		height: 70%;
-		width: 55%;
-	}
-
-	.Button-Box:hover p{
-		font-size: 1.9vw;
-		transition: 0.25s;
-	}
-
 	.Block-2{
 		height: 80vw !important;
 	}
@@ -139,32 +128,14 @@ img{
 .Info-Block .Text{
 	height: 70%;
 }
-.Button-Box{
-	height: 15%;
-}
 .Title p {
 	border-bottom: 2px solid white;
 	text-transform: uppercase;
 }
+.Button-Container{
+	height: 10%;
+	width: 100%;
 
-.Button-Box button{
-	
-	background: #00A3FF;
-	border-radius: 2px;
-	border: 0px;
-	height: 65%;
-	width: 50%;
-	color: white;
-	font-size: 1.25vw;
-
-	transition: 0.25s;
-}
-
-.Button-Box button:hover{
-	transition: 0.25s;
-	height: 70%;
-	width: 55%;
-	font-size: 1.35vw;
 }
 
 .Text p {
@@ -176,6 +147,7 @@ img{
 }
 .Block-2{
 	height: 45vw;
+	background-image: linear-gradient(180deg, #131415 0%, #131415 85%, #181721 100%);
 }
 
 .Block-2 .Content{
@@ -292,23 +264,7 @@ img{
 
 .Block-2 .Content .Left-Block .GoToList{
 	height: 8%;
-	background: #00A2FE;
-
 }
-
-.Block-2 .Content .Left-Block .Link-Box .GoToList{
-	color: white;
-	font-size: 1.5vw;
-	margin: 0;
-	transition: 0.25s;
-}
-
-.Block-2 .Content .Left-Block .Link-Box:hover .GoToList, .Block-2 .Content .Left-Block .Link-Box:hover{
-	font-size: 1.75vw;
-	color: white;
-	text-decoration: none;
-}
-
 
 .owl-dots{
 	position: absolute;
@@ -376,41 +332,238 @@ img{
 }
 .Buttons-Box{
 	position: absolute;
-	top: 75%;
+	bottom: 0;
 	width: 100%;
-	height: 25%;
+	height: 15%;
 	background-color: rgba(0,0,0,0.75);
 }
 
+.Buttons-Box .Buy .Button-Base-p{
+	opacity: 1;
+	transition: 0.25s;
+}
+.Buttons-Box .Buy:hover .Button-Base-p{
+	opacity: 0;
+}
+.Buttons-Box .Buy .Buy-Button{
+	opacity: 0;
+	position: absolute;
+	width: 70%;
+	height: 70%;
+	transition: 0.25s;
+}
+.Buttons-Box .Buy:hover .Buy-Button{
+	opacity: 1;
+}
+
+
+
+.Block-3{
+	background-image: url("../img/BG-1.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 .Block-3 .Content{
-	height: 50vw;
-	background-color: #313131;
-}
+	height: 55vw;
+	background-image: linear-gradient(180deg,rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.25) 99%, rgba(0,0,0,0) 100%);
 
-.To-Kits-Button{
-	height: 10%;
+}
+.Text-Box-2{
+	width: 40%;
+	font-size: 1.5vw;
+	color: white;
+	text-align: center;
+	border-top: 2px solid #00A2FE;
+	border-bottom: 2px solid #00A2FE;
+}
+.Kits{
+	height: 80%;
+}
+.Kit-Box{
+	height: 100%;
+}
+.Kit-Box .Image-Box{
+	height: 25%;
+}
+.Kit-Box .Info-Box{
+	height: 75%;
 	width: 100%;
+	font-size: 1.35vw;
+	color: rgba(255,255,255,0.95);
+	border-right: 0px;
+	
+	transition: 0.5s;
 }
 
-.To-Kits-Button button{
+.Kit-Box:hover .Info-Box{
+	border-right: 2px solid #00A2FE;
+}
+.Kit-Box:hover .Price-And-Button{
+	border-left: 2px solid #00A2FE;
 	
+}
+.Kit-Box:hover .Button{
+	opacity: 1;
+	width: 50%;
+}
+
+.Price-And-Button{
+	width: 100%;
+	height: 10%;
+	transition: 0.5s;
+	border-left: 0;
+
+}
+.Price-And-Button .Button{
+	opacity: 0;
+	width: 0%;
+	height: 100%;
+	transition: 0.25s;
+}
+
+.Kit-Box .Button .Button-Base-p{
+	display: none;
+}
+.Kit-Box:hover .Button .Button-Base-p{
+	display: block;
+}
+
+
+.Price-And-Button .Price{
+	width: 50%;
+	height: 100%;
+	font-size: 1.25em;
+}
+.Price-And-Button .Price p{
+	margin: 0;
+}
+.Block-4{
+	background-color: rgba(24,24,32,1);
+}
+
+.Block-4 .Content p{
+	margin: 0;
+}
+
+.Button-Container-2{
+	height: 20vw;
+
+}
+
+.Button-Base-B5 .Button-Base-a img{
+	width: 80%;
+	height: 80%;
+	opacity: 1;
+	transition: 0.25s;
+}
+.Button-Base-B5 .Button-Base-a:hover img{
+	opacity: 0.25;
+}
+
+.Button-Base-B5 .Button-Base-a{
+	background: 0;
+}
+
+.Button-Base-B5 .Button-Base-a .Info-Box-Components{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	font-size: 2vw;
+	color: white;
+	transition: 0.25s;
+	text-align: center;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+.Button-Base-B5:hover .Button-Base-a .Info-Box-Components{
+	opacity: 1;
+}
+
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.Button-Base-a{
 	background: #00A3FF;
 	border-radius: 2px;
 	border: 0px;
-	height: 80%;
-	width: 30%;
-	color: white;
-	font-size: 1.35vw;
-
-	transition: 0.5s ease;
+	height: 100%;
+	width: 100%;
+	filter: none;
+	transition: 0.25s ease;
 }
-
-.To-Kits-Button button:hover{
+.Button-Base-a:hover{
 	background: rgba(0,0,0,0);
-	border-radius: 0px;
-	border-bottom: 2px solid #00A3FF;
-	border-top: 2px solid #00A3FF;
+	border: 2px solid #00A3FF;
+	/*border-bottom: 2px solid #00A3FF;
+	border-top: 2px solid #00A3FF;*/
 	width: 110%;
-	font-size: 1.5vw;
+	height: 110%;
+	transform: translate(-5%, -5%);
+	font-size: 1.15em;
 }
+
+
+
+.no-scaling:hover{
+	width: 100% !important;
+	height: 100% !important;
+	transform: none;
+}
+.no-border{
+	border-radius: 0 !important;
+}
+
+.no-border-full{
+	border: 0 !important;
+}
+.no-border-right{
+	border-right: 0 !important;
+}
+.Button-Base-a .Button-Base-p{
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+.Button-Base-B1{
+	height: 90%;
+	width: 75%;
+	font-size: 1.25vw;
+}
+.Button-Base-B2{
+	height: 100%;
+	width: 100%;
+	font-size: 1.25vw;
+}
+.Button-Base-B3{
+	height: 65%;
+	width: 25%;
+	font-size: 1.25vw;
+}
+.Button-Base-B4{
+	height: 100%;
+	width: 100%;
+	font-size: 1.25vw;
+}
+.Button-Base-B5{
+	height: 80%;
+	width: 80%;
+	font-size: 1.25vw;
+}
+.Button-Base-B6{
+	height: 80%;
+	width: 25%;
+	font-size: 1vw;
+}
+.Button-Base-B7{
+	height: 80%;
+	width: 65%;
+	font-size: 1vw;
+}
+
+
+
+
 
