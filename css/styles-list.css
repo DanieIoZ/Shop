@@ -1,0 +1,79 @@
+.Content{
+	background-color: #131415;
+}
+.Panel{
+	height: 100%;
+}
+.Main{
+	width: 100%;
+	height: 80vw;
+
+	background-color: #393939;
+
+}
+
+.Upper-Panel{
+	background-color: #131415;
+	
+}
+.Upper-Panel .Buttons{
+	background-color: #393939;
+	height: 50px;
+	
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+img{
+	height: 100%;
+	width: 100%;
+}
+
+
+.List{
+	width: 100%;
+	color: white;
+}
+.List .Item{
+	width: 97.5%;
+	height: 15vw;
+	margin-bottom: 10px;
+}
+
+.Item .Image-Box{
+	width: 40%;
+	height: 100%;
+}
+.Item .Info-Box{
+	width: 60%;
+	height: 100%;
+	background-color: #131415;
+
+}
+
+.Item .To-Cart{
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	top: 0;
+}
+.Item .Read-More{
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+}
+
+.Item:hover .To-Cart{
+
+}
+.Item:hover .Read-More{
+
+}
+
+.Button-Base-L1{
+	height: 75%;
+	width: 75%;
+	font-size: 1.25vw;
+}

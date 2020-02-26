@@ -252,6 +252,7 @@ img{
 	width: 100%;
 	bottom: -40%;
 	margin: 0;
+	display: none;
 	padding: 0;
 	font-size: 1.15vw;
 	color: white;
@@ -260,6 +261,7 @@ img{
 }
 .Left-Block .Categories .Category-Item:hover .Category-Content .Icon-Title{
 	bottom: 0;
+	display: block;
 }
 
 .Block-2 .Content .Left-Block .GoToList{
@@ -394,6 +396,9 @@ img{
 	border-right: 0px;
 	
 	transition: 0.5s;
+}
+.Short-Info{
+	width: 90%;
 }
 
 .Kit-Box:hover .Info-Box{
