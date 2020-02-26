@@ -1,0 +1,46 @@
+
+
+
+.Button-Base-a{
+	background: #00A3FF;
+	border-radius: 2px;
+	border: 0px;
+	height: 100%;
+	width: 100%;
+	filter: none;
+	transition: 0.25s ease;
+}
+.Button-Base-a:hover{
+	background: rgba(0,0,0,0);
+	border: 2px solid #00A3FF;
+	/*border-bottom: 2px solid #00A3FF;
+	border-top: 2px solid #00A3FF;*/
+	width: 110%;
+	height: 110%;
+	transform: translate(-5%, -5%);
+	font-size: 1.15em;
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+.no-scaling:hover{
+	width: 100% !important;
+	height: 100% !important;
+	transform: none;
+}
+.no-border{
+	border-radius: 0 !important;
+}
+
+.no-border-full{
+	border: 0 !important;
+}
+.no-border-right{
+	border-right: 0 !important;
+}
+.Button-Base-a .Button-Base-p{
+	color: white;
+	text-align: center;
+	width: 100%;
+}
