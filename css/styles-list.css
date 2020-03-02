@@ -180,3 +180,35 @@ img{
 .Block-2-L .Main{
 	padding: 10px;
 }
+
+.Block-2-L .Game-Categories{
+	color: white;
+}
+
+.Info-Box{
+	padding: 1%;
+}
+
+.Info-Box .Price{
+	width: 25%;
+	font-size: 1.5em;
+}
+.Info-Box .Old-Price{
+	text-decoration: line-through;
+}
+
+.By-Price{
+	width: 100%;
+	height: 3vw;
+}
+
+.Price-Box{
+	width: 45%;
+
+}
+.Dev-Pub{
+	width: 50%;
+}
+.Game-Type{
+	color: #A1A1A1;
+}
