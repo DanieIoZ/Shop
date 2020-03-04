@@ -1,17 +1,25 @@
 p{
 	color: white;
-	font-size: 1.25vw;
+	font-size: 1vw;
 }
 
 
 body{
-	background-image: url("../games/backs/ori-bg.jpg");
-	background-repeat: no-repeat;
+	/*background-image: url("../games/backs/ori-bg.jpg");
+	background-repeat: no-repeat;*/
 }
 
-.Title{
-	height: 30vw;
-	width: 100%;
+.header{
+	height: 50px;
+	background-color: rgba(50,50,50,1);
+}
+
+.footer{
+	height: 50px;
+	background-color: rgba(50,50,50,1);
+	margin: 0;
+	margin-top: 10px;
+
 }
 
 .Game-Name{
@@ -21,12 +29,11 @@ body{
 }
 
 .Block-2-L{
-	background-image: linear-gradient(180deg, rgba(0,0,0,0),rgba(0,0,0,1) 50%);
+	/*background-image: linear-gradient(180deg, rgba(0,0,0,0),rgba(0,0,0,1) 50%);*/
 }
 
 .Block-2-L .Main{
-	
-	width: 1080px;
+		
 	background-color: rgba(10,10,10,0.9);
 }
 
@@ -34,18 +41,25 @@ body{
 .Right-Side{
 	width: 30%;
 	height: 100%;
-}
-
-.Pictures{
-	width: 100%;
-	height: 40%;
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 1;
 }
 
 .Right-Side	.Description{
 	width: 100%;
 	height: 60%;
 }
-
+.owl-dots{
+	position: absolute;
+	bottom: 0;
+	margin-top: -32px;
+	width: 30%;
+	left: 35%;
+ 	right: 35%;
+}
 .Description .Attributes{
 	height: 100%;
 	width: 50%;
@@ -57,30 +71,57 @@ body{
 
 .Description p{
 	margin: 0;
+	height: 50%;
+	width: 100%;
 }
+.Title p{
+	font-size: 2vw;
 
+}
+.Title{
+	height: 50px;
+}
 .Attributes .Attr-Item p{
 	color: rgba(200,200,200,1);
-	
-}
-
-.Game-Picture{
-	width: 49%;
-	height: 49%;
-}
-.Game-Cover-Pic{
-	height: 100%;
-	width: auto ;
 }
 .row-1{
 	width: 100%;
 	height: 25vw;
 }
 
-.row-1 .Game-Cover{
-	width: 70%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.4);
+.Buy-Button{
+	width: 100%;
+	height: 15%;
+}
+.Hide-Button{
+	width: 100%;
+	height: 15%;
+}
+.Button-Base-B1{
+	width: 75%;
+	height: 70%;
 }
 
+.Full-Description{
+	width: 60%;
+}
+.Block-Title{
+	font-size: 1.5vw;
+}
+.D-Block{
 
+}
+.Score{
+}
+.MS-value{
+	background-color: #6c3;
+	height: 4vw;
+	width: 4vw;
+	border-radius: 5px;
+}
+.US-value{
+	background-color: #6c3;
+	height: 4vw;
+	width: 4vw;
+	border-radius: 5px;
+}
