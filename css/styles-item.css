@@ -75,7 +75,7 @@ body{
 	width: 100%;
 }
 .Title p{
-	font-size: 2vw;
+	font-size: 3vw;
 
 }
 .Title{
@@ -86,7 +86,6 @@ body{
 }
 .row-1{
 	width: 100%;
-	height: 25vw;
 }
 
 .Buy-Button{
@@ -124,4 +123,26 @@ body{
 	height: 4vw;
 	width: 4vw;
 	border-radius: 5px;
+}
+.Req-block{
+	width: 50%;
+}
+.Req-block-title{
+	border-bottom: 2px solid white;
+}
+.Requirements{
+	width: 100%;
+}
+
+.Full-Description-2{
+	width: 50%;
+}
+
+.Requirements .Attributes{
+	height: 100%;
+	width: 30%;
+}
+.Requirements .Values{
+	height: 100%;
+	width: 70%;
 }
