@@ -39,8 +39,12 @@ a:hover{
 .no-border-right{
 	border-right: 0 !important;
 }
-.Button-Base-a .Button-Base-p{
+.Button-Base-p{
 	color: white;
 	text-align: center;
 	width: 100%;
+}
+
+input[type="submit"]{
+	color: white;
 }

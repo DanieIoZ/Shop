@@ -351,7 +351,7 @@
 						echo '<div class="Kit-Box col-md-4 d-flex flex-column justify-content-between">
 								<div class="Image-Box">
 									<img src="';
-						echo $ResArr['KitPic'];
+						echo $ResArr['Cover'];
 						echo '">
 								</div>
 								<div class="Info-Box d-flex flex-column justify-content-between align-items-center">
@@ -405,11 +405,10 @@
 				</div> -->
 			</div>
 			<div class="Button-Container d-flex justify-content-center align-items-center">
-				<div class="Button-Base-B3">
-					<a href="#" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-						<p class="Button-Base-p m-0">READ MORE</p>
-					</a>
-				</div>
+				<form action="List.php" method="post" class="Button-Base-B3">
+					<input type="hidden" value="vrkits" name="Category">
+					<input type="submit" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0 d-flex justify-content-center align-items-center input-text" value="TO KITS LIST">
+				</form>
 			</div>
 		</div>
 	</div>

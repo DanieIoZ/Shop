@@ -36,7 +36,7 @@ p{
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url("../img/VR-bg.jpg");
+  /*background-image: url("../img/VR-bg.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(2px);
@@ -142,6 +142,11 @@ img{
 	width: 60%;
 	height: 100%;
 
+}
+
+.Middle{
+	font-size: 1vw;
+	color: rgba(180,180,180,1);
 }
 
 .Item .To-Cart{
