@@ -1,3 +1,16 @@
+<?php
+	$server = 'localhost';
+	$user = 'root';
+	$password = '';
+	$database = 'mydb';
+
+	$dblink = mysqli_connect($server, $user, $password, $database);
+	if(!$dblink)
+	{
+		die('Ошибка подключения к серверу баз данных.');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,23 +44,27 @@
 				<div class="owl-carousel owl-theme owl-loaded m-0 p-0 relative">
 					<div class="owl-stage-outer">
 						<div class="owl-stage">
-				            <div class="owl-item">
+							<?php
+								$NewsQ = mysqli_query($dblink, "SELECT * FROM `first-page`");	
+								while ($ResArr = mysqli_fetch_array($NewsQ))
+								{
+									echo '<div class="owl-item">
 				            	<div class="item">
 				            		<div class="Upper-Box relative">
-				            			<img src="img/Main.jpg">
+				            			<img src="'.$ResArr["Img1"].'">
 				            		</div>
 				            		<div class="Down-Box relative">
 				            			<div class="Gif-Box relative">
-				            				<img src="img/BlackandwhiteSophisticatedDassie-size_restricted.gif">
+				            				<img src="'.$ResArr["Img2"].'">
 				            			</div>
 				            			
 				            			<div class="Info-Block absolute">
 				            				<div class="Content d-flex flex-column justify-content-around align-items-center">
 				            					<div class="Title d-flex justify-content-center p-1">
-				            						<p class="m-0">Valve Index</p>	
+				            						<p class="m-0">'.$ResArr["Title"].'</p>	
 				            					</div>
 				            					<div class="Text d-flex justify-content-center p-2">
-				            						<p class="m-0">Valve Index is a virtual reality headset created and manufactured by Valve. The headset is intended to be used with the Valve Index Controllers, known during development as the Knuckles Controllers, but is also backwards compatible with the HTC Vive and HTC Vive Pro controllers.</p>
+				            						<p class="m-0">'.$ResArr["Desc"].'</p>
 				            					</div>
 				            					<div class="Button-Container d-flex justify-content-center align-items-center">
 				            						<div class="Button-Base-B1">
@@ -60,98 +77,10 @@
 				            			</div>
 				            		</div>
 				            	</div>
-				            </div>
-				            <div class="owl-item">
-				            	<div class="item">
-				            		<div class="Upper-Box relative">
-				            			<img src="img/Main.jpg">
-				            		</div>
-				            		<div class="Down-Box relative">
-				            			<div class="Gif-Box relative">
-				            				<img src="img/BlackandwhiteSophisticatedDassie-size_restricted.gif">
-				            			</div>
-				            			
-				            			<div class="Info-Block absolute">
-				            				<div class="Content d-flex flex-column justify-content-around align-items-center">
-				            					<div class="Title d-flex justify-content-center p-1">
-				            						<p class="m-0">Valve Index</p>	
-				            					</div>
-				            					<div class="Text d-flex justify-content-center p-2">
-				            						<p class="m-0">Valve Index is a virtual reality headset created and manufactured by Valve. The headset is intended to be used with the Valve Index Controllers, known during development as the Knuckles Controllers, but is also backwards compatible with the HTC Vive and HTC Vive Pro controllers.</p>
-				            					</div>
-				            					<div class="Button-Container d-flex justify-content-center align-items-center">
-				            						<div class="Button-Base-B1">
-														<a href="#" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-															<p class="Button-Base-p m-0">READ MORE</p>
-														</a>
-													</div>
-				            					</div>
-				            				</div>
-				            			</div>
-				            		</div>
-				            	</div>
-				            </div>
-				            <div class="owl-item">
-				            	<div class="item">
-				            		<div class="Upper-Box relative">
-				            			<img src="img/Main.jpg">
-				            		</div>
-				            		<div class="Down-Box relative">
-				            			<div class="Gif-Box relative">
-				            				<img src="img/BlackandwhiteSophisticatedDassie-size_restricted.gif">
-				            			</div>
-				            			
-				            			<div class="Info-Block absolute">
-				            				<div class="Content d-flex flex-column justify-content-around align-items-center">
-				            					<div class="Title d-flex justify-content-center p-1">
-				            						<p class="m-0">Valve Index</p>	
-				            					</div>
-				            					<div class="Text d-flex justify-content-center p-2">
-				            						<p class="m-0">Valve Index is a virtual reality headset created and manufactured by Valve. The headset is intended to be used with the Valve Index Controllers, known during development as the Knuckles Controllers, but is also backwards compatible with the HTC Vive and HTC Vive Pro controllers.</p>
-				            					</div>
-				            					<div class="Button-Container d-flex justify-content-center align-items-center">
-				            						<div class="Button-Base-B1">
-														<a href="#" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-															<p class="Button-Base-p m-0">READ MORE</p>
-														</a>
-													</div>
-				            					</div>
-				            				</div>
-				            			</div>
-				            		</div>
-				            	</div>
-				            </div>
-				            <div class="owl-item">
-				            	<div class="item">
-				            		<div class="Upper-Box relative">
-				            			<img src="img/Main.jpg">
-				            		</div>
-				            		<div class="Down-Box relative">
-				            			<div class="Gif-Box relative">
-				            				<img src="img/BlackandwhiteSophisticatedDassie-size_restricted.gif">
-				            			</div>
-				            			
-				            			<div class="Info-Block absolute">
-				            				<div class="Content d-flex flex-column justify-content-around align-items-center">
-				            					<div class="Title d-flex justify-content-center p-1">
-				            						<p class="m-0">Valve Index</p>	
-				            					</div>
-				            					<div class="Text d-flex justify-content-center p-2">
-				            						<p class="m-0">Valve Index is a virtual reality headset created and manufactured by Valve. The headset is intended to be used with the Valve Index Controllers, known during development as the Knuckles Controllers, but is also backwards compatible with the HTC Vive and HTC Vive Pro controllers.</p>
-				            					</div>
-				            					<div class="Button-Container d-flex justify-content-center align-items-center">
-				            						<div class="Button-Base-B1">
-														<a href="#" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-															<p class="Button-Base-p m-0">READ MORE</p>
-														</a>
-													</div>
-				            					</div>
-				            				</div>
-				            			</div>
-				            		</div>
-				            	</div>
-				            </div>
-							</div>
+				            </div>';
+								}
+							?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -161,166 +90,33 @@
 		<div class="Content col-md-8 p-0 m-0 d-flex">
 				<div class="Left-Block col-md-3 p-0 m-0">
 					<div class="Categories d-flex flex-wrap relative">
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
+						<?php
+							$NewsQ = mysqli_query($dblink, "SELECT * FROM `categoriesofgames`");	
+							while ($ResArr = mysqli_fetch_array($NewsQ))
+							{
+								echo '<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
 							<div class="Category-Content d-flex flex-column align-items-center
 							justify-content-center">
 								<div class="Icon-Box d-flex justify-content-center align-items-center">
 									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
 								</div>
 								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
+									<img src="';
+								echo $ResArr["Icon"];
+								echo '" class="Icon-Image-White">
 								</div>
 								<div class="Filling">
 									
 								</div>
 
-								<p class="Icon-Title">Multiplayer</p>	
+								<p class="Icon-Title">';
+								echo $ResArr["Name"];
+								echo '</p>	
 							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
-						<div class="Category-Item d-flex justify-content-center align-items-center col-md-6 p-0 m-0">
-							<div class="Category-Content d-flex flex-column align-items-center
-							justify-content-center">
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-gray.svg" class="Icon-Image-Gray">
-								</div>
-								<div class="Icon-Box d-flex justify-content-center align-items-center">
-									<img src="icons/multiplayer-white.svg" class="Icon-Image-White">
-								</div>
-								<div class="Filling">
-									
-								</div>
-
-								<p class="Icon-Title">Multiplayer</p>	
-							</div>	
-						</div>
+						</div>';
+							}
+						?>
+						
 						
 					</div>
 					<div class="GoToList">
@@ -547,7 +343,45 @@
 				<p class="m-0">VR FULL KITS</p>
 			</div>
 			<div class="Kits d-flex justify-content-between">
-				<div class="Kit-Box col-md-4 d-flex flex-column justify-content-between">
+				
+				<?php
+					$NewsQ = mysqli_query($dblink, "SELECT * FROM `vrkits`");	
+					while ($ResArr = mysqli_fetch_array($NewsQ))
+					{
+						echo '<div class="Kit-Box col-md-4 d-flex flex-column justify-content-between">
+								<div class="Image-Box">
+									<img src="';
+						echo $ResArr['KitPic'];
+						echo '">
+								</div>
+								<div class="Info-Box d-flex flex-column justify-content-between align-items-center">
+									<div class="Short-Info p-2">
+										<p class="m-1 mr-4">';
+						echo $ResArr['Description'];
+						echo '</p>
+						</div>
+						<div class="Price-And-Button d-flex justify-content-between align-items-center">
+							<div class="Price d-flex justify-content-center align-items-center">
+								<p class="m-1">';
+						echo $ResArr['Price'];
+						echo '$</p>
+							</div>
+							<div class="Button">
+								<div class="Button-Base-B4">
+									<a href="#" class="Button-Base-a no-border no-border-right no-scaling relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+										<p class="Button-Base-p m-0">READ MORE</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>';
+						}
+				?>
+
+
+
+				<!-- <div class="Kit-Box col-md-4 d-flex flex-column justify-content-between">
 					<div class="Image-Box">
 						<img src="img/main.jpg">
 					</div>
@@ -568,51 +402,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="Kit-Box col-md-4 d-flex flex-column justify-content-between">
-					<div class="Image-Box">
-						<img src="img/main.jpg">
-					</div>
-					<div class="Info-Box d-flex flex-column justify-content-between align-items-center">
-						<div class="Short-Info p-2">
-							<p class="m-1">Valve Index is a virtual reality headset created and manufactured by Valve. The headset is intended to be used with the Valve Index Controllers, known during development as the Knuckles Controllers, but is also backwards compatible with the HTC Vive and HTC Vive Pro controllers.</p>
-						</div>
-						<div class="Price-And-Button d-flex justify-content-between align-items-center">
-							<div class="Price d-flex justify-content-center align-items-center">
-								<p class="m-1">151$</p>
-							</div>
-							<div class="Button">
-								<div class="Button-Base-B4">
-									<a href="#" class="Button-Base-a no-border no-border-right no-scaling relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-										<p class="Button-Base-p m-0">READ MORE</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="Kit-Box col-md-4 d-flex flex-column justify-content-between">
-					<div class="Image-Box">
-						<img src="img/main.jpg">
-					</div>
-					<div class="Info-Box d-flex flex-column justify-content-between align-items-center">
-						<div class="Short-Info p-2">
-							<p class="m-1">Valve Index is a virtual reality headset created and manufactured by Valve. The headset is intended to be used with the Valve Index Controllers, known during development as the Knuckles Controllers, but is also backwards compatible with the HTC Vive and HTC Vive Pro controllers.</p>
-						</div>
-						<div class="Price-And-Button d-flex justify-content-between align-items-center">
-							<div class="Price d-flex justify-content-center align-items-center">
-								<p class="m-1">151$</p>
-							</div>
-							<div class="Button">
-								<div class="Button-Base-B4">
-									<a href="#" class="Button-Base-a no-border no-border-right no-scaling relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-										<p class="Button-Base-p m-0">READ MORE</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="Button-Container d-flex justify-content-center align-items-center">
 				<div class="Button-Base-B3">
