@@ -20,10 +20,7 @@
 	transform: translate(-5%, -5%);
 	font-size: 1.15em;
 }
-a:hover{
-	color: white;
-	text-decoration: none;
-}
+
 .no-scaling:hover{
 	width: 100% !important;
 	height: 100% !important;
@@ -46,5 +43,5 @@ a:hover{
 }
 
 input[type="submit"]{
-	color: white;
+	color: white;	
 }

@@ -1,0 +1,52 @@
+<header>
+		<div class="header d-flex justify-content-center row m-0 mb-4 p-0 container-fluid">
+			<div class="col-md-8 d-flex justify-content-between">
+				<div class="SomeDiv">
+					<form action="Main.php" method="POST">
+						<input type="submit" value="Main">
+					</form>
+				</div>
+				<?php
+					if ($logged)
+					{
+						?>
+							<div class="Account d-flex">
+								<div class="Money d-flex">
+									<div class="Balance">
+										<?php echo '<p>'.$userdata['Money']."$".'</p>'; ?>
+									</div>
+									<div class="PutMoneyBtn">
+										<form action="######" method="POST"><input type="submit" value="+"></form>
+									</div>
+								</div>
+								<div class="Account-Name">
+									<?php echo '<form action="accountpage.php" method="POST"><input type="submit" value="'.$userdata['Name'].'"></form>' ?>
+
+									
+								</div>
+								<div class="Cart d-flex">
+									<p>Cart: </p>
+									<p class="CartCount">0</p>
+								</div>
+								<div class="SignOut">
+									<form action="Main.php" method="POST">
+										<input name="signout" type="submit" value="Sign Out">
+									</form>
+								</div>
+							</div>
+						<?php
+					}
+					else
+					{
+						?>
+						<form action="accountpage.php" method="POST">
+							<input type="submit" value="Sign in">
+						</form>
+						<?php
+					}
+				?>
+				
+				
+			</div>
+		</div>
+	</header>

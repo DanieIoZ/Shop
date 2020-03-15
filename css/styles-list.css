@@ -1,6 +1,4 @@
-body{
-	background-color: #131415 !important; 
-}
+
 
 p{
 	margin-bottom: 0 !important;
@@ -9,9 +7,12 @@ p{
 
 .Block-1-L{
 	width: 100%;
-
+	color: white;
 }
-
+.Sort-Item{
+	margin-left: 10px;
+	border: 1px solid rgba(255,255,255,0.3);
+}
 .Block-1-L .Right-Panel{
 	height: 100%;	
 }
@@ -27,7 +28,6 @@ p{
 
 .Money{
 	background-color: #029145;
-	height: 5vw;
 	width: 100%;
 }
 
@@ -216,4 +216,23 @@ img{
 }
 .Game-Type{
 	color: #A1A1A1;
+}
+
+
+.Button-Container{
+	width: 50%;
+	height: 100%;
+	bottom: 0;
+	right: 0;
+	display: none;
+	transition: 0.25s;
+
+}
+.Button-List{
+	width: 90%;
+	height: 90%;
+	font-size: 1.2vw;
+}
+.Right-Side{
+	width: 40%;
 }

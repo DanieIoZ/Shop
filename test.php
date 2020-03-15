@@ -1,22 +1,16 @@
 <?php
-	
-	include 'php/connectdata.php';
-	
-	$Category = 1;
+	$user = 'root';
+	$password = '';
+	$conn_str = 'mysql:host=localhost;port=3307;dbname=mydb';
+	$p = new PDO($conn_str,$user,$password) or die('rip');
 
-	if ($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		$Category = $_POST['Category'];
-	}
-	$Res = mysqli_query($dblink, "SELECT * FROM categories_of_items where idCOI = '".$Category."'");
-	
-	$CategoryQ = mysqli_fetch_assoc($Res);
 
-	$CatTitle = $CategoryQ['CatTitle'];
-	$CatLogo = $CategoryQ['CatIcon'];
-	$Request = $CategoryQ['Request'];
-	$UpLeft = $CategoryQ['UpLeftInfo'];
-	$UpRight = $CategoryQ['UpRightInfo'];
+
+	$CatTitle = 'VR KITS';
+	$CatLogo = '';
+	$Request = "SELECT * FROM vrkits as vr inner join (select idVRDevs,name as namedev FROM vrdevs) as vrd on vr.Developer = vrd.idVRDevs";
+	$UpLeft = '';
+	$UpRight = '';
 
 	$Filters = array();
 	if (isset($_POST['ByDeveloper']) & $_POST['ByDeveloper'] != "0")
@@ -43,7 +37,6 @@
 		}
 		$Request = substr($Request, 0, strlen($Request)-4);
 	}
-	include 'php/checklogged.php';
 ?>
 
 <!DOCTYPE html>
@@ -57,10 +50,21 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-	<?php include "html/header.html"; ?>
+	<div class="Block-1-L container-fluid row m-0 p-0 ">
+		<div class="Right-Panel col-md-2 p-0 m-0">
+			<!-- <div class="Account-Panel col-12 p-0 d-flex flex-column justify-content-between">
+				<div class="Account-Image d-flex flex-column justify-content-between">
+					<img src="img/8n3gxrQQPO0.jpg" alt="">
+					<div class="Name">
+							
+					</div>
 
-	<div class="Block-1-L container-fluid row m-0 p-0 d-flex justify-content-center">
-		
+				</div>
+				<div class="Money">
+					
+				</div>
+			</div> -->
+		</div>
 		<div class="Main col-md-8 d-flex flex-column justify-content-center align-items-start">
 			<div class="Title relative d-flex justify-content-between">
 				<div class="List-Name d-flex justify-content-between align-items-center">
@@ -79,20 +83,18 @@
 				</div>
 			</div>
 			<div class="Upper-Panel relative d-flex justify-content-center align-items-center">
-				<div class="Buttons d-flex justify-content-end align-items-center">
-				    <label>Sort by:</label>
-				    <div class="Sort-Item" id="DivSortName">
-				    	<label for="SortName">Name</label>
-				    	<input type="radio" id="SortName" name="Sort" onclick="Sort('Name')">
-				    </div>
-				    <div class="Sort-Item" id="DivSortBtl">
-				    	<label for="SortBtl">Price (Big to Low)</label>
-				    	<input type="radio" id="SortBtl" name="Sort" onclick="Sort('BtL')">
-				    </div>
-				    <div class="Sort-Item" id="DivSortLtb">
-				    	<label for="SortLtb">Price (Low to Big)</label>
-				    	<input type="radio" id="SortLtb" name="Sort" onclick="Sort('LtB')">
-				    </div>
+				<div class="Buttons d-flex justify-content-between align-items-center">
+				        
+				       <!--  <div class="Button-Base-B1">
+							<a href="#" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+								<p class="Button-Base-p m-0">READ MORE</p>
+							</a>
+						</div> -->
+
+						<!-- <form class="Search d-flex align-items-center justify-content-between">
+							<input type="text" class="form-control m-0 search-input">
+							<input type="submit" class="search-btn ml-1" value="">
+						</form> -->
 				</div>
 			</div>
 		</div>	
@@ -106,8 +108,6 @@
 					<div class="Sorting">
 						
 					</div>
-
-
 					<div class="By-Name">
 						<input type="text" placeholder="Name" name="ByName">
 					</div>
@@ -158,6 +158,7 @@
 								echo '<option value="'.$ResArr['idVRDevs'].'">'.$ResArr['Name'].'</option>';
 							}
 						?>
+
 					</select>
 					<input type="submit" value="Filter">
 				</form>
@@ -165,17 +166,11 @@
 			</div>
 		</div>
 		<div class="Main col-md-8">
-			<div id="ItemsList" class="List d-flex flex-column justify-content-start align-items-center">
+			<div class="List d-flex flex-column justify-content-start align-items-center">
 				<?php
+						foreach ($p->query($Request) as $ResArr) {
 
-					$ListQuery = mysqli_query($dblink, $Request);	
-					// echo '<input type="hidden" value="'.$Request.'">';
-					if (mysqli_num_rows($ListQuery) > 0)
-					{
-						while ($ResArr = mysqli_fetch_array($ListQuery))
-						{
-
-							echo '<a href = "Item.php?Category='.$Category.'&idItem='.$ResArr['idItem'].'"> <div class="Item d-flex">
+							echo '<div class="Item d-flex">
 						<div class="Image-Box relative">
 							<img src="';
 							echo $ResArr['Cover'];
@@ -184,11 +179,9 @@
 						<div class="Info-Box d-flex flex-column justify-content-between">
 							<div class="Upper d-flex justify-content-between">
 								<div class="Title-GT">
-									<div name="NameData" class="Title">
-										<p>';
+									<div class="Title">';
 							echo $ResArr['Name'];
-							echo '</p>
-							</div>';
+							echo '</div>';
 							echo $UpLeft;
 								// echo '<div class="Game-Type">';
 								// echo $ResArr[''];
@@ -212,43 +205,40 @@
 										
 							echo '</div>
 							</div>
-							<div class="Middle d-flex justify-content-between">'.$ResArr['Description'].'
-							</div>
+							<div class="Middle d-flex justify-content-between">';
+							echo $ResArr['Description'];				
+							echo '</div>
 							<div class="Down d-flex justify-content-between">
-								<div class="d-flex flex-column justify-content-between">
-									<div class="Date"><p>';
-								echo date('j F Y',strtotime($ResArr['ReleaseDate']));
-							echo '</p></div>
-								<div class="Count">';
-								if ($ResArr['Count'] > 0) 
-								{
-									echo '<font color = "#a1f720">Есть в наличии!</font>';
-								}
-								else
-								{
-									echo '<font color = "#f73520">Нет в наличии.</font>';
-								}
-								echo '</div>';
-								
-								echo '</div>
+								<div class="Date">';
+							echo date('j F Y',strtotime($ResArr['ReleaseDate']));
+							echo '</div>
+								<div class="Right-Side d-flex justify-content-between">
 								<div class="Price d-flex justify-content-between">
-									<p name="PriceData" class="Cur-Price">
+									<p class="Cur-Price">
 										'.$ResArr['Price'].'$
 									</p>
+									
 								</div>
+								<form action="Item.php" method="post" class="Button-Container d-flex ml-3 justify-content-end align-items-end">
+										
+										
+										<input type="hidden" value="'.$Category.'" name="Category">
+										<input type="hidden" value="'.$idVrKits.'" name="itemId">
+										<div class="Button-List">
+											<input type="submit" class="Button-Base-a Button-List no-scaling d-flex p-0 m-0 d-flex justify-content-center" value="To page">
+										</div>
+								</form>	
+							</div>
 						</div>
 					</div>
-				</div>
-				</a>';
+				</div>';
 
 						}
 
-					}
-						
 				?>
 
 
-				<!-- <div class="Item d-flex">
+				<div class="Item d-flex">
 					<div class="Image-Box relative">
 						<img src="" alt="">
 					</div>
@@ -303,11 +293,11 @@
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div>
 			</div>
 		</div>	
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/sort.js"></script>
+	
 </body>
 </html>
+

@@ -2,10 +2,6 @@ img{
 	width: 100%;
 	height: 100%;
 }
-body{
-	background-color: #131415;
-
-}
 button, button:focus{
 	outline: none;
 }
@@ -14,4 +10,25 @@ button, button:focus{
 }
 .relative{
 	position: relative;
+}
+a p{
+	color: white;
+	text-decoration: none;
+}
+a:hover{
+	color: white;
+	text-decoration: none !important;
+}
+
+body{
+	background-color: #131415 !important; 
+}
+.header{
+	height: 50px;
+	background-color: rgba(50,50,50,1);
+}
+.header input[type="submit"]{
+	background: 0;
+	border: 0;
+	margin-left: 10px;
 }

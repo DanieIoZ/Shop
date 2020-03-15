@@ -9,10 +9,7 @@ body{
 	background-repeat: no-repeat;*/
 }
 
-.header{
-	height: 50px;
-	background-color: rgba(50,50,50,1);
-}
+
 
 .footer{
 	height: 50px;
@@ -37,6 +34,9 @@ body{
 	background-color: rgba(10,10,10,0.9);
 }
 
+.pic-box{
+	height: 40vw;
+}
 
 .Right-Side{
 	width: 30%;
@@ -78,6 +78,11 @@ body{
 	font-size: 3vw;
 
 }
+
+.Item-Desc{
+	width: 100%;
+}
+
 .Title{
 	height: 50px;
 }
@@ -102,7 +107,7 @@ body{
 }
 
 .Full-Description{
-	width: 60%;
+	width: 80%;
 }
 .Block-Title{
 	font-size: 1.5vw;

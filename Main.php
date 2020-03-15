@@ -9,6 +9,32 @@
 	{
 		die('Ошибка подключения к серверу баз данных.');
 	}
+
+	include 'php/checklogged.php';
+
+	// $logged = false;
+
+	// if ($_SERVER['REQUEST_METHOD'] == "POST")
+	// {
+	// 	if (isset($_POST['signout']))
+	// 	{
+	// 		setcookie("id", "", time() - 3600*24*30*12, "/");
+	// 	    setcookie("hash", "", time() - 3600*24*30*12, "/", null, null, true); // httponly !!!
+	// 	    header("Location: Main.php"); 
+	// 	        exit;
+	// 	}
+	// }
+	// if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
+	// {
+	// 	$query = mysqli_query($dblink, "SELECT * FROM users WHERE idUser = '".intval($_COOKIE['id'])."' LIMIT 1");
+	// 	$userdata = mysqli_fetch_assoc($query);
+	// 	$logged = true;
+	// 	if(($userdata['password'] !== $_COOKIE['hash']) or ($userdata['idUser'] !== $_COOKIE['id']))
+	// 	{
+	// 		setcookie("id", "", time() - 3600*24*30*12, "/");
+	// 	    setcookie("hash", "", time() - 3600*24*30*12, "/", null, null, true); // httponly !!!
+	// 	}
+	// }	 
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +50,7 @@
 	<link rel="stylesheet" href="css/owl/owl.theme.default.min.css">
 </head>
 <body>
+	<?php include "html/header.html"; ?>
 	<div class="Block-1 container-fluid p-0 m-0 row">
 		<div class="Account-Panel col-md-2 p-0">
 				<!-- <div class="Account-Image col-12 p-0">
@@ -68,7 +95,7 @@
 				            					</div>
 				            					<div class="Button-Container d-flex justify-content-center align-items-center">
 				            						<div class="Button-Base-B1">
-														<a href="#" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+														<a href="Item.php?Category='.$ResArr['ItemCat'].'&idItem='.$ResArr['idItem'].'" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
 															<p class="Button-Base-p m-0">READ MORE</p>
 														</a>
 													</div>
@@ -133,205 +160,203 @@
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
 						<div class="Game-Box">
 							<div class="More-Info">
 								<div class="Gif-Box">
-										<img src="games/hl-alyx-gif.gif">
+									<img src="img/games/hl-alyx-gif.gif">
+								</div>
+								<div class="Buttons-Box d-flex justify-content-around align-items-center">
+									<div class="Button-Base-B6 Buy ">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">5$</p>
+											<img class="Buy-Button" src="icons/cart.svg">
+										</a>
 									</div>
-									<div class="Buttons-Box d-flex justify-content-around align-items-center">
-										<div class="Button-Base-B6 Buy ">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">5$</p>
-												<img class="Buy-Button" src="icons/cart.svg">
-											</a>
-										</div>
-										<div class="Button-Base-B7">
-											<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
-												<p class="Button-Base-p m-0">READ MORE</p>
-											</a>
-										</div>
+									<div class="Button-Base-B7">
+										<a href="#" class="Button-Base-a no-scaling no-border relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+											<p class="Button-Base-p m-0">READ MORE</p>
+										</a>
 									</div>
+								</div>
 							</div>
 							<div class="overlay">
 								<div class="pic">
-									<img src="games/hl-alyx-static.jpg" alt="Avatar" class="image">
+									<img src="img/games/hl-alyx-static.jpg" alt="Avatar" class="image">
 								</div>
 							</div>
 						</div>
-						
-						
 					</div>
 				</div>
 			</div>	
@@ -355,9 +380,9 @@
 						echo '">
 								</div>
 								<div class="Info-Box d-flex flex-column justify-content-between align-items-center">
-									<div class="Short-Info p-2">
-										<p class="m-1 mr-4">';
-						echo $ResArr['Description'];
+									<div class="Short-Info p-1">
+										<p class="pr-3">';
+						echo substr($ResArr['Description'],0,290)."...";
 						echo '</p>
 						</div>
 						<div class="Price-And-Button d-flex justify-content-between align-items-center">
@@ -368,7 +393,7 @@
 							</div>
 							<div class="Button">
 								<div class="Button-Base-B4">
-									<a href="#" class="Button-Base-a no-border no-border-right no-scaling relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
+									<a href="Item.php?Category=1&idItem='.$ResArr['idItem'].'" class="Button-Base-a no-border no-border-right no-scaling relative d-flex justify-content-center align-items-center p-0 m-0" class="d-flex justify-content-center align-items-center">
 										<p class="Button-Base-p m-0">READ MORE</p>
 									</a>
 								</div>
@@ -406,8 +431,8 @@
 			</div>
 			<div class="Button-Container d-flex justify-content-center align-items-center">
 				<form action="List.php" method="post" class="Button-Base-B3">
-					<input type="hidden" value="vrkits" name="Category">
-					<input type="submit" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0 d-flex justify-content-center align-items-center input-text" value="TO KITS LIST">
+					<input type="hidden" value="1" name="Category">
+					<input type="submit" class="Button-Base-a relative d-flex justify-content-center align-items-center p-0 m-0 input-text" value="TO KITS LIST">
 				</form>
 			</div>
 		</div>
